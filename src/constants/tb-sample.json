@@ -1,0 +1,150 @@
+{
+    "company": "a333acd1-8149-43e2-bf1c-1e64d3163238",
+    "categories": [
+        {
+            "id": "12f4f4da-abe1-437c-9a47-79ce591834f3",
+            "code": "A0.00.00.00",
+            "name": "Assets",
+            "coa": "a333acd1-8149-43e2-bf1c-1e64d3163238",
+            "groups": [
+                {
+                    "id": "b1bdfa74-6302-4a1a-91a0-f0ac7f60161a",
+                    "code": "A1.00.00.00",
+                    "name": "Non-Current Assets",
+                    "category": "12f4f4da-abe1-437c-9a47-79ce591834f3",
+                    "parent": null,
+                    "accounts": [],
+                    "children": [
+                        {
+                            "id": "b3fc9d46-d510-458b-ab2d-a192192bbd4e",
+                            "code": "A1.01.00.00",
+                            "name": "Property, Plant and Equipment",
+                            "category": "12f4f4da-abe1-437c-9a47-79ce591834f3",
+                            "parent": "b1bdfa74-6302-4a1a-91a0-f0ac7f60161a",
+                            "accounts": [
+                                {
+                                    "id": "93b6a80c-a730-426b-bf2a-62a112968879",
+                                    "created_at": "2023-05-12T15:22:48.753509Z",
+                                    "modified_at": "2023-05-12T15:22:48.753555Z",
+                                    "name": "Land",
+                                    "code": "A1.01.01.01",
+                                    "locked": false,
+                                    "group": "b3fc9d46-d510-458b-ab2d-a192192bbd4e"
+                                },
+                                {
+                                    "id": "0aa7e3e2-651b-43e1-bf9a-14cb3318824a",
+                                    "created_at": "2023-05-12T15:22:48.764775Z",
+                                    "modified_at": "2023-05-12T15:22:48.764812Z",
+                                    "name": "Building",
+                                    "code": "A1.01.02.01",
+                                    "locked": false,
+                                    "group": "b3fc9d46-d510-458b-ab2d-a192192bbd4e"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "f0732ae4-3fa9-456e-8960-3709e1c5af38",
+                            "code": "A1.02.00.00",
+                            "name": "Intangible Assets",
+                            "category": "12f4f4da-abe1-437c-9a47-79ce591834f3",
+                            "parent": "b1bdfa74-6302-4a1a-91a0-f0ac7f60161a",
+                            "accounts": [
+                                {
+                                    "id": "b56608bc-ecea-49f4-8588-598aa895554c",
+                                    "created_at": "2023-05-12T15:22:48.783276Z",
+                                    "modified_at": "2023-05-12T15:22:48.783312Z",
+                                    "name": "Software",
+                                    "code": "A1.02.01.01",
+                                    "locked": false,
+                                    "group": "f0732ae4-3fa9-456e-8960-3709e1c5af38"
+                                },
+                                {
+                                    "id": "711d3b22-3208-4988-a350-41a86cd35b62",
+                                    "created_at": "2023-05-12T15:22:48.792133Z",
+                                    "modified_at": "2023-05-12T15:22:48.792168Z",
+                                    "name": "Goodwill",
+                                    "code": "A1.02.02.01",
+                                    "locked": false,
+                                    "group": "f0732ae4-3fa9-456e-8960-3709e1c5af38"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "d41225a1-da97-41d2-813c-90c8457ce576",
+                    "code": "A2.00.00.00",
+                    "name": "Current Assets",
+                    "category": "12f4f4da-abe1-437c-9a47-79ce591834f3",
+                    "parent": null,
+                    "accounts": [],
+                    "children": [
+                        {
+                            "id": "cbe4350a-d78a-410d-a09c-ee7c1abe2cb1",
+                            "code": "A2.01.00.00",
+                            "name": "Debtors and Other Receivables",
+                            "category": "12f4f4da-abe1-437c-9a47-79ce591834f3",
+                            "parent": "d41225a1-da97-41d2-813c-90c8457ce576",
+                            "accounts": [
+                                {
+                                    "id": "37fbdcbc-6c14-4c01-b15a-168536f02867",
+                                    "created_at": "2023-05-12T15:22:48.818351Z",
+                                    "modified_at": "2023-05-12T15:22:48.818398Z",
+                                    "name": "Trade Debtors",
+                                    "code": "A2.01.01.01",
+                                    "locked": false,
+                                    "group": "cbe4350a-d78a-410d-a09c-ee7c1abe2cb1"
+                                },
+                                {
+                                    "id": "ad303554-c229-4062-aff7-6910cd404efd",
+                                    "created_at": "2023-05-12T15:22:48.826669Z",
+                                    "modified_at": "2023-05-12T15:22:48.826701Z",
+                                    "name": "Provision for doubtful debt - Trade Debtors",
+                                    "code": "A2.01.01.02",
+                                    "locked": false,
+                                    "group": "cbe4350a-d78a-410d-a09c-ee7c1abe2cb1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4e7f137e-9440-4385-9f36-c75fb1e04e8b",
+            "code": "E0.00.00.00",
+            "name": "Expenses",
+            "coa": "a333acd1-8149-43e2-bf1c-1e64d3163238",
+            "groups": [
+                {
+                    "id": "74f74af3-046a-43df-9293-a69ebcf3f78e",
+                    "code": "E1.01.00.00",
+                    "name": "Cost of sales",
+                    "category": "4e7f137e-9440-4385-9f36-c75fb1e04e8b",
+                    "parent": null,
+                    "accounts": [
+                        {
+                            "id": "db32233a-2892-4a8d-9f4e-c4b067edd2f3",
+                            "created_at": "2023-05-12T15:22:48.851123Z",
+                            "modified_at": "2023-05-12T15:22:48.851157Z",
+                            "name": "COS - raw materials and consumables - Opening stocks",
+                            "code": "E1.01.01.01",
+                            "locked": false,
+                            "group": "74f74af3-046a-43df-9293-a69ebcf3f78e"
+                        },
+                        {
+                            "id": "97941a1c-7157-45b0-9f39-350daca3bea3",
+                            "created_at": "2023-05-12T15:22:48.859183Z",
+                            "modified_at": "2023-05-12T15:22:48.859215Z",
+                            "name": "COS - work in progress - Opening stocks",
+                            "code": "E1.01.01.02",
+                            "locked": false,
+                            "group": "74f74af3-046a-43df-9293-a69ebcf3f78e"
+                        }
+                    ],
+                    "children": []
+                }
+            ]
+        }
+    ]
+}

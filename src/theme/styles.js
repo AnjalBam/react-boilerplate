@@ -1,12 +1,11 @@
-import { mode } from "@chakra-ui/theme-tools";
-
 export const styles = {
-    global: (props) => ({
+    global: () => ({
         body: {
-            fontFamily:  'Poppins',
-            color: mode("gray.800", "whiteAlpha.900")(props),
-            bg: mode("white", "gray.800")(props),
+            fontFamily: "Poppins",
+            color: "gray.700",
+            bg: "gray.100",
             lineHeight: "base",
+            transition: "all 300ms ease-in-out",
         },
     }),
-}
+};

@@ -1,17 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
 import { HomePage } from "../pages";
+import BaseLayout from "../pages/layout/BaseLayout";
+import TrialBalancePage from "../pages/TrialBalancePage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
-        // loader: rootLoader,
+        element: <BaseLayout />,
         children: [
           {
-            path: "/home",
+            path: "/",
             element: <HomePage />,
+          },
+          {
+            path: "/trial-balance",
+            element: <TrialBalancePage />,
           }
         ],
+
       },
 ])
