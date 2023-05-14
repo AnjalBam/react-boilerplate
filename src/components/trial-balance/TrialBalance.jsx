@@ -21,12 +21,18 @@ const TrialBalance = () => {
     return (
         <>
             <Box> Hello</Box>
-            <Accordion>
+            <Accordion allowMultiple>
                 {(trialBalance?.categories || []).map((category, index) => {
                     return (
                         <AccordionItem key={category?.id || index}>
                             <h2>
-                                <AccordionButton bg="brand.500" color="white">
+                                <AccordionButton
+                                    bg="brand.500"
+                                    _hover={{ bg: "brand.200" }}
+                                    color="white"
+                                    gap={2}
+                                >
+                                    <AccordionIcon />
                                     <Box
                                         as="span"
                                         flex="1"
@@ -35,10 +41,9 @@ const TrialBalance = () => {
                                     >
                                         {category?.name || "N/A"}
                                     </Box>
-                                    <AccordionIcon />
                                 </AccordionButton>
                             </h2>
-                            <AccordionPanel pb={4}>
+                            <AccordionPanel pb={4} pr={0}>
                                 <GroupView groups={category?.groups} />
                             </AccordionPanel>
                         </AccordionItem>

@@ -48,12 +48,13 @@ const GroupView = ({ groups }) => {
     };
     return (
         <Box>
-            <Accordion>
+            <Accordion allowMultiple>
                 {groups?.map((group, index) => {
                     return (
                         <AccordionItem key={group?.id || index}>
                             <h2>
                                 <AccordionButton px={0}>
+                                    <AccordionIcon />
                                     <Box
                                         as="span"
                                         flex="1"
@@ -62,10 +63,9 @@ const GroupView = ({ groups }) => {
                                     >
                                         {group?.name || "N/A"}
                                     </Box>
-                                    <AccordionIcon />
                                 </AccordionButton>
                             </h2>
-                            <AccordionPanel pb={4} px={0}>
+                            <AccordionPanel pb={4} pr={0}>
                                 {(group?.children || []).length > 0
                                     ? getSubGroups(group)
                                     : getAccounts(group)}
