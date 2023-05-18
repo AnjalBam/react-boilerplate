@@ -56,7 +56,7 @@ const BaseLayout = () => {
                 </Drawer>
             </GridItem>
 
-            <GridItem height={"100vh"} bg="white" p={{ base: "2", lg: "4" }}>
+            <GridItem height={"100vh"} overflowY={"scroll"} bg="white" p={{ base: "2", lg: "4" }}>
                 <Outlet />
             </GridItem>
         </Grid>
