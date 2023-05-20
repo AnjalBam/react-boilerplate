@@ -10,17 +10,31 @@ import {
 } from "@chakra-ui/react";
 import GroupView from "./GroupView";
 import useTrialBalanceCOntext from "../../hooks/useTrialBalanceContext";
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import trialBalanceData from "../../constants/tb-sample.json";
 import TrialBalanceItemGrid from "./TrialBalanceItemGrid";
 import GroupTitleComponent from "./GroupTitleComponent";
 
+import { aggreGateTotalTrialBalance } from "../../utils/helpers";
+
 const TrialBalance = () => {
     const { trialBalance, setTrialBalance } = useTrialBalanceCOntext();
 
+    const [aggregateTrialBalanceData, setAggregateTrialBalanceData] = useState({
+        totalCr: 0.0,
+        totalDr: 0.0,
+    });
+
+    const updateAggreGateTotalBalanceData = useCallback((categories) => {
+        return aggreGateTotalTrialBalance(categories);
+    }, []);
+
     useEffect(() => {
         setTrialBalance(trialBalanceData);
-    }, [setTrialBalance]);
+        setAggregateTrialBalanceData(
+            updateAggreGateTotalBalanceData(trialBalanceData?.categories)
+        );
+    }, [setTrialBalance, updateAggreGateTotalBalanceData]);
 
     const AmountComponent = () => (
         <Box>
@@ -28,10 +42,10 @@ const TrialBalance = () => {
                 Closing Balance
             </Text>
             <Flex justifyContent={"space-around"} py={2} textAlign={"left"}>
-                <Text fontWeight={"semibold"} width={"100%"}>
+                <Text fontWeight={"semibold"} width={"100%"} pl={4}>
                     Cr
                 </Text>
-                <Text fontWeight={"semibold"} width={"100%"}>
+                <Text fontWeight={"semibold"} width={"100%"} pl={4}>
                     Dr
                 </Text>
             </Flex>
@@ -39,13 +53,15 @@ const TrialBalance = () => {
     );
 
     const OverviewComponent = () => {
+        const { totalCr, totalDr } = aggregateTrialBalanceData;
+
         return (
             <Flex justifyContent={"space-around"} py={2} textAlign={"left"}>
                 <Text fontWeight={"semibold"} width={"100%"}>
-                    Cr. 0.0
+                    Cr. {totalCr}
                 </Text>
                 <Text fontWeight={"semibold"} width={"100%"}>
-                    Dr. 0.0
+                    Dr. {totalDr}
                 </Text>
             </Flex>
         );
