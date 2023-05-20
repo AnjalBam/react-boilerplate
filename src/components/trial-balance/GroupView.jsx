@@ -5,12 +5,9 @@ import {
     AccordionItem,
     AccordionPanel,
     Box,
-    Table,
-    TableContainer,
-    Tbody,
-    Td,
-    Tr,
 } from "@chakra-ui/react";
+import TrialBalanceItemGrid from "./TrialBalanceItemGrid";
+import GroupTitleComponent from "./GroupTitleComponent";
 
 const GroupView = ({ groups }) => {
     const getSubGroups = (group) => {
@@ -21,29 +18,29 @@ const GroupView = ({ groups }) => {
         );
     };
     const getAccounts = (group) => {
-        console.log("getAccounts", group?.accounts);
         if (!(group?.accounts || []).length > 0) {
             return <Box>No Accounts</Box>;
         }
         const getAccountRow = (account) => {
             return (
-                <Tr key={account?.id}>
-                    <Td>{account?.name}</Td>
-                    <Td>{account?.debit}</Td>
-                    <Td>{account?.credit}</Td>
-                </Tr>
+                <>
+                    <Box py={2}>
+                        <TrialBalanceItemGrid
+                            titleCentered={false}
+                            title={account?.name}
+                            CrAmount={account?.tb_data?.credit_amount || 0.0}
+                            DrAmount={account?.tb_data?.debit_amount || 0.0}
+                        />
+                    </Box>
+                </>
             );
         };
         return (
-            <TableContainer>
-                <Table>
-                    <Tbody>
-                        {(group?.accounts || []).map((account) =>
-                            getAccountRow(account)
-                        )}
-                    </Tbody>
-                </Table>
-            </TableContainer>
+            <Box>
+                {(group?.accounts || []).map((account) =>
+                    getAccountRow(account)
+                )}
+            </Box>
         );
     };
     return (
@@ -55,14 +52,20 @@ const GroupView = ({ groups }) => {
                             <h2>
                                 <AccordionButton px={0}>
                                     <AccordionIcon />
-                                    <Box
+                                    {/* <Box
                                         as="span"
                                         flex="1"
                                         textAlign="left"
                                         fontWeight={"semibold"}
                                     >
                                         {group?.name || "N/A"}
-                                    </Box>
+                                    </Box> */}
+                                    <GroupTitleComponent
+                                        titleCentered={false}
+                                        title={group?.name || "N/A"}
+                                        data={group || []}
+                                        color={"brand.500"}
+                                    />
                                 </AccordionButton>
                             </h2>
                             <AccordionPanel pb={4} pr={0}>

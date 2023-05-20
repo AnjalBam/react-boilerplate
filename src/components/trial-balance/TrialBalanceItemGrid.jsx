@@ -15,6 +15,7 @@ const TrialBalanceItemGrid = ({
         <Grid
             gridTemplateColumns={"repeat(3, 1fr)"}
             alignItems={"center"}
+            fontSize={"sm"}
             {...props}
         >
             {/* Title */}
@@ -25,7 +26,7 @@ const TrialBalanceItemGrid = ({
                 >
                     <Heading
                         as={as}
-                        size="md"
+                        size="sm"
                         fontWeight={isBold ? "bold" : "normal"}
                         pl={4}
                     >

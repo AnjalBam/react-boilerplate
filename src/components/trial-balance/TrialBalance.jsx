@@ -13,6 +13,7 @@ import useTrialBalanceCOntext from "../../hooks/useTrialBalanceContext";
 import { useEffect } from "react";
 import trialBalanceData from "../../constants/tb-sample.json";
 import TrialBalanceItemGrid from "./TrialBalanceItemGrid";
+import GroupTitleComponent from "./GroupTitleComponent";
 
 const TrialBalance = () => {
     const { trialBalance, setTrialBalance } = useTrialBalanceCOntext();
@@ -77,16 +78,11 @@ const TrialBalance = () => {
                                     gap={2}
                                 >
                                     <AccordionIcon />
-                                    <Box width={"full"}>
-                                        <TrialBalanceItemGrid
-                                            Component={OverviewComponent}
-                                            title={category?.name || "N/A"}
-                                            isBold
-                                            titleCentered={false}
-                                            bg={"inherit"}
-                                            color={"white"}
-                                        />
-                                    </Box>
+                                    <GroupTitleComponent
+                                        titleCentered={false}
+                                        title={category?.name || "N/A"}
+                                        data={category?.groups || []}
+                                    />
                                 </AccordionButton>
                             </h2>
                             <AccordionPanel pb={4} pr={0}>
