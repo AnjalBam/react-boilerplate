@@ -11,7 +11,7 @@ const GroupTitleComponent = ({ title, data, ...props }) => {
     const updateAggregatedAmounts = useCallback((group) => {
         const accounts = collectAccounts(group);
         const { totalCr, totalDr } = calculateCrDrAmounts(accounts);
-    
+
         setAggregatedCrAmount(totalCr);
         setAggregatedDrAmount(totalDr);
 
@@ -24,12 +24,12 @@ const GroupTitleComponent = ({ title, data, ...props }) => {
 
     const OverviewComponent = () => {
         return (
-            <Flex justifyContent={"space-around"} py={2} textAlign={"left"}>
+            <Flex justifyContent={"space-around"} py={2} textAlign={"right"}>
                 <Text fontWeight={"semibold"} width={"100%"}>
-                    Cr. {aggregatedCrAmount}
+                    Cr. {new Number(aggregatedCrAmount).toFixed(2)}
                 </Text>
                 <Text fontWeight={"semibold"} width={"100%"}>
-                    Dr. {aggregatedDrAmount}
+                    Dr. {new Number(aggregatedDrAmount).toFixed(2)}
                 </Text>
             </Flex>
         );

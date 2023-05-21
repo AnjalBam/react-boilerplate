@@ -41,7 +41,7 @@ const TrialBalance = () => {
             <Text fontWeight={"semibold"} textAlign={"center"} py={4}>
                 Closing Balance
             </Text>
-            <Flex justifyContent={"space-around"} py={2} textAlign={"left"}>
+            <Flex justifyContent={"space-around"} py={2} textAlign={"right"}>
                 <Text fontWeight={"semibold"} width={"100%"} pl={4}>
                     Cr
                 </Text>
@@ -56,12 +56,12 @@ const TrialBalance = () => {
         const { totalCr, totalDr } = aggregateTrialBalanceData;
 
         return (
-            <Flex justifyContent={"space-around"} py={2} textAlign={"left"}>
+            <Flex justifyContent={"space-around"} py={2} textAlign={"right"}>
                 <Text fontWeight={"semibold"} width={"100%"}>
-                    Cr. {totalCr}
+                    Cr. {new Number(totalCr).toFixed(2)}
                 </Text>
                 <Text fontWeight={"semibold"} width={"100%"}>
-                    Dr. {totalDr}
+                    Dr. {new Number(totalDr).toFixed(2)}
                 </Text>
             </Flex>
         );

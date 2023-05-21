@@ -41,8 +41,12 @@ const TrialBalanceItemGrid = ({
                     <Component />
                 ) : (
                     <Flex gap={2}>
-                        <Text width={"100%"}>{CrAmount}</Text>
-                        <Text width={"100%"}>{DrAmount}</Text>
+                        <Text width={"100%"} textAlign={"right"}>
+                            {new Number(CrAmount).toFixed(2)}
+                        </Text>
+                        <Text width={"100%"} textAlign={"right"}>
+                            {new Number(DrAmount).toFixed(2)}
+                        </Text>
                     </Flex>
                 )}
             </Box>
